@@ -43,10 +43,10 @@ class MainActivity : AppCompatActivity() {
                 descuento = 0.0
             }
             val neto = totalConIva - descuento
-                tvSub.text = "Subtotal: ${subTotal.toString()}"
-                tvIVA.text = "Valor iva: ${valorIva.toString()}"
-                tvDesc.text = "Total con iva: ${tvDesc.toString()}"
-                tvTotal.text = "Total con descuento: ${neto.toString()}"
+                tvSub.text = "Subtotal: ${Math.round(subTotal).toString()}"
+                tvIVA.text = "Valor iva: ${Math.round(valorIva).toString()}"
+                tvDesc.text = "Total con iva: ${Math.round(totalConIva).toString()}"
+                tvTotal.text = "Total con descuento: ${Math.round(neto).toString()}"
 
         }
 }
