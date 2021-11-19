@@ -23,22 +23,7 @@ class MainActivity : AppCompatActivity() {
 
 
         btnFacture.setOnClickListener(View.OnClickListener {
-            var percentDesc = valDesc.text.toString().toDouble() / 100
-            //Calcular el valor de la compra sin iva
-            var subTot = Math.round (((valProducto.text.toString().toInt() * valCant.text.toString().toInt()) / 1.19) * 100) / 100
-            tvSub.setText("$" + subTot + " COP")
 
-            //Calcular el valor del iva
-            var Iva = (valProducto.text.toString().toInt() * valCant.text.toString().toInt()) - subTot
-            tvIVA.setText("$" + Iva + " COP")
-
-            //Calcular el valor del descuento
-            var Desc = Math.round (subTot * percentDesc)
-            tvDesc.setText("$" + Desc + " COP")
-
-            //Calcular el total de la factura
-            var Total = Math.round ((subTot - Desc.toDouble()) + Iva)
-            tvTotal.setText("$" + Total + " COP")
         })
     }
 }
