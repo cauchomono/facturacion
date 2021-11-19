@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         var tvIVA = findViewById<View>(R.id.tvIVAValue) as TextView
         var tvDesc = findViewById<View>(R.id.tvTotIvaValue) as TextView
         var tvTotal = findViewById<View>(R.id.tvNetoValue) as TextView
+        var tvDescuento = findViewById<View>(R.id.tvDescValue) as TextView
 
 
 
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                 tvIVA.text = "${Math.round(valorIva).toString()}"
                 tvDesc.text = "${Math.round(totalConIva).toString()}"
                 tvTotal.text = "${Math.round(neto).toString()}"
+            tvDescuento.text = "${Math.round(descuento).toString()}"
 
         }
 }
