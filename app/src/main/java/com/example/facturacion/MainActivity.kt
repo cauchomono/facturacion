@@ -39,8 +39,14 @@ class MainActivity : AppCompatActivity() {
 
             }else if(totalConIva > 2000000){
                 descuento = subTotal*0.05
+            }else{
+                descuento = 0.0
             }
-
+                tvSub.text = "Subtotal: ${subTotal.toString()}"
+                tvIVA.text = "Valor iva: ${valorIva.toString()}"
+                tvDesc.text = "Total con iva: ${tvDesc.toString()}"
+                tvTotal.text = "Total con descuento: ${valorIva.toString()}"
 
         }
+}
 }
