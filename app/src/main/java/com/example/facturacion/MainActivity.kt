@@ -28,24 +28,25 @@ class MainActivity : AppCompatActivity() {
             val precioProducto = valProducto.text.toString().toDouble()
 
 
+            val totalConIva =cantidad*precioProducto
+            val subTotal = totalConIva/(1+(ivaDecimal/100))
+            val valorIva =totalConIva-subTotal
 
-            val subTotal = 2
-            val valorIva =1
-            val totalConIva =1
 
             val descuento : Double
             if(totalConIva >= 2000000){
                 descuento = subTotal*0.1
 
-            }else if(totalConIva > 2000000){
+            }else if(totalConIva >= 1000000){
                 descuento = subTotal*0.05
             }else{
                 descuento = 0.0
             }
+            val neto = totalConIva - descuento
                 tvSub.text = "Subtotal: ${subTotal.toString()}"
                 tvIVA.text = "Valor iva: ${valorIva.toString()}"
                 tvDesc.text = "Total con iva: ${tvDesc.toString()}"
-                tvTotal.text = "Total con descuento: ${valorIva.toString()}"
+                tvTotal.text = "Total con descuento: ${neto.toString()}"
 
         }
 }
